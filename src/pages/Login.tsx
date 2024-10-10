@@ -2,6 +2,9 @@ import { useContext, useState } from 'react';
 import banner from '../assets/banner.svg'
 import Context from '../context/Context';
 import { useNavigate } from 'react-router-dom';
+import InputField from '../Components/InputField';
+import CustomLink from '../Components/CustomLink';
+import FormButton from '../Components/FormButton';
 
 function Login() {
 
@@ -32,11 +35,33 @@ function Login() {
         <>
             <h1>Welcome</h1>
             <img src={banner} alt='Banner da tela de login' />
-            <form onSubmit={handleSubmit} >              
-                <input onChange={handleChange} id='username' name='username' type="text" placeholder='Enter your username' />
-                <input onChange={handleChange} id='password' name='password' type="password" placeholder='Enter your password' />
-                <p>Forgot Password</p>
-                <button>Sign In</button>
+            <form onSubmit={handleSubmit} >
+                
+                <InputField 
+                    id='username' 
+                    name='username' 
+                    type='text' 
+                    placeholder='Enter your username' 
+                    value={input.username} 
+                    onChange={handleChange} 
+                />  
+                <InputField 
+                    id='password' 
+                    name='password' 
+                    type='password' 
+                    placeholder='Enter your password' 
+                    value={input.password} 
+                    onChange={handleChange}
+                />
+
+                <CustomLink href='#' target='_self'>
+                    Forgot your password
+                </CustomLink>
+
+                <FormButton 
+                    label={'Login'} type='submit'
+                />
+                
             </form>
         </>
     )
