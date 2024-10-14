@@ -13,76 +13,36 @@
     {
       "id": "3",
       "value": "estudar python",
-      "checked": true
+      "checked": false
     },
     {
       "id": "4",
       "value": "estudar Java",
-      "checked": true
+      "checked": false
     },
     {
       "id": "5",
       "value": "estudar Android",
-      "checked": true
+      "checked": false
     },
     {
       "id": "6",
       "value": "estudar C#",
-      "checked": true
+      "checked": false
     },
     {
       "id": "7",
       "value": "Revisar Front-End",
-      "checked": true
+      "checked": false
     },
     {
       "id": "8",
       "value": "Revisar Back-End",
-      "checked": true
-    },
-    {
-      "id": "6388",
-      "value": "comprar shoee",
       "checked": false
     },
     {
-      "id": "661b",
-      "value": "vender",
-      "checked": false
-    },
-    {
-      "id": "c908",
-      "value": "raoubar",
-      "checked": false
-    },
-    {
-      "id": "8fed",
-      "value": "nova tarefa",
-      "checked": false
-    },
-    {
-      "id": "c71b",
-      "value": "Novidades",
-      "checked": false
-    },
-    {
-      "id": "686f",
-      "value": "new",
-      "checked": false
-    },
-    {
-      "id": "892a",
-      "value": "new3",
-      "checked": false
-    },
-    {
-      "id": "1266",
-      "value": "new4",
-      "checked": false
-    },
-    {
-      "id": "562a",
-      "value": "dsadsa",
+      "id": "dd6f",
+      "value": "Amar minha esposa",
       "checked": false
     }
   ]

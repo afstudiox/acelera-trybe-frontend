@@ -1,3 +1,4 @@
+version: '3'
 services:
   web:
     image: node:latest
@@ -6,6 +7,17 @@ services:
       - ./:/app
     ports:
       - 5173:5173
+    tty: true
+    stdin_open: true
+    command: npm run dev
+
+  json-server:
+    image: node:latest
+    working_dir: /app
+    volumes:
+      - ./:/app
+    ports:
       - 3000:3000
     tty: true
     stdin_open: true
+    command: npm run db

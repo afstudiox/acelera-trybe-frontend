@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "db": "json-server --watch src/api/data.json",
     "test": "vitest",
     "build": "tsc -b && vite build",
     "lint": "eslint .",

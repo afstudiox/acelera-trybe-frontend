@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import InputField from '../Components/InputField';
 import CustomLink from '../Components/CustomLink';
 import FormButton from '../Components/FormButton';
+import Banner from '../Components/Banner';
 
 function Login() {
 
@@ -34,9 +35,14 @@ function Login() {
     return(
         <>
             <h1>Welcome</h1>
-            <img src={banner} alt='Banner da tela de login' />
+
+            <Banner 
+                src={banner} 
+                alt="Banner da tela de Login" 
+            />
+
             <form onSubmit={handleSubmit} >
-                
+
                 <InputField 
                     id='username' 
                     name='username' 
