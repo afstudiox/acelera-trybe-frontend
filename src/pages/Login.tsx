@@ -6,6 +6,7 @@ import InputField from '../Components/InputField';
 import CustomLink from '../Components/CustomLink';
 import FormButton from '../Components/FormButton';
 import Banner from '../Components/Banner';
+import style from './Login.module.css';
 
 function Login() {
 
@@ -33,15 +34,16 @@ function Login() {
     }
 
     return(
-        <>
-            <h1>Welcome</h1>
+        <main className={style.container}>
+            <h1 className={style.title}>Welcome</h1>
 
-            <Banner 
+            <Banner
+                className={style.banner} 
                 src={banner} 
                 alt="Banner da tela de Login" 
             />
 
-            <form onSubmit={handleSubmit} >
+            <form onSubmit={handleSubmit} className={style.container}>
 
                 <InputField 
                     id='username' 
@@ -49,27 +51,30 @@ function Login() {
                     type='text' 
                     placeholder='Enter your username' 
                     value={input.username} 
+                    className={style.input}
                     onChange={handleChange} 
                 />  
+
                 <InputField 
                     id='password' 
                     name='password' 
                     type='password' 
                     placeholder='Enter your password' 
                     value={input.password} 
+                    className={style.input}
                     onChange={handleChange}
                 />
 
-                <CustomLink href='#' target='_self'>
+                <CustomLink href='#' target='_self' className={style.link}>
                     Forgot your password
                 </CustomLink>
 
                 <FormButton 
-                    label={'Login'} type='submit'
+                    label={'Login'} type='submit' className={style.button}
                 />
                 
             </form>
-        </>
+        </main>
     )
 }
 
