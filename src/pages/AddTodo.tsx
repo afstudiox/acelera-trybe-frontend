@@ -1,6 +1,7 @@
 import { ChangeEvent, useContext, useState } from "react"
 import Context from "../context/Context"
 import banner from '../assets/addtodo_banner.svg'
+import style from './AddTodo.module.css';
 import { useNavigate } from "react-router-dom";
 
 function AddTodo() {
@@ -24,15 +25,15 @@ function AddTodo() {
     }
 
     return(
-        <>
-        <h1>Welcome, {user}</h1>
-        <img src={banner} alt="Banner da teka de adicionar tarefa" />
-        <p>Add your new task</p>
-        <form onSubmit={handleSubmit}>
-            <input onChange={handleChange} type="text" name="task" id="task" value={task} />
-            <button>Add To List</button>
+        <main className={style.container}>
+        <h1 className={style.title}>Welcome, {user}</h1>
+        <img className={style.banner} src={banner} />
+        <p className={style.intro}>Add What your want to do later on..</p>
+        <form className={style.form} onSubmit={handleSubmit}>
+            <input className={style.input} onChange={handleChange} type="text" name="task" id="task" value={task} placeholder="Add a task" />
+            <button className={style.button}>Add To List</button>
         </form>
-        </>
+        </main>
     )
 }
 
