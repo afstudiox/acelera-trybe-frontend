@@ -23,6 +23,9 @@ function TodoList() {
 
     return(
         <main className={style.container}>
+            <div className="circle1"></div>
+            <div className="circle2"></div>
+            <div className="pentagon"></div>
             <h1 className={style.title}>Welcome, {user} </h1>
             <img className={style.banner} src={banner} alt="Banner da tela de Todo List" />
             <button className={style.button} onClick={() => navigate("/todo/add")}>Add new Task</button>
