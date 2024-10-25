@@ -1,11 +1,11 @@
 import { useContext, useEffect } from "react";
 import Context from "../context/Context";
 import banner from '../assets/todolist_banner.svg';
+import style from './TodoList.module.css'; 
 import { Todo } from "../api/todosApi";
 import { useNavigate } from "react-router-dom";
 
 function TodoList() {
-
     const { user, todos, loading, getTodos, editTodos } = useContext(Context);
     const navigate = useNavigate();
 
@@ -22,26 +22,35 @@ function TodoList() {
     }
 
     return(
-        <>
-            <h1>Welcome, {user} </h1>
-            <img src={banner} alt="Banner da tela de Todo List" />
-            <button onClick={() => navigate("/todo/add")}>Add new Task</button>
-            <p>Daily Tasks</p>
-            <ul>
-                {
-                    loading ? <p>Loading...</p> 
-                        : todos.map((task) => {
-                            return <li key={task.id}>
-                                    <input onChange={() => handleChange(task)} 
-                                    type='checkbox' value={task.value} checked=
-                                    {task.checked} />
-                                    {task.value}
-                            </li>
-                        })
-                }
-            </ul>
-        </>
+        <main className={style.container}>
+            <h1 className={style.title}>Welcome, {user} </h1>
+            <img className={style.banner} src={banner} alt="Banner da tela de Todo List" />
+            <button className={style.button} onClick={() => navigate("/todo/add")}>Add new Task</button>
+            <div className={style.box}>
+                <p>Daily Tasks</p>
+                <ul>
+                    {
+                        loading ? <p>Loading...</p> 
+                            : todos.map((task) => {
+                                return (
+                                    <li key={task.id}>
+                                        <label className={style.customCheckbox}>
+                                            <input 
+                                                type="checkbox"
+                                                onChange={() => handleChange(task)}
+                                                checked={task.checked}
+                                            />
+                                            <span className={style.checkmark}></span>
+                                            {task.value}
+                                        </label>
+                                    </li>
+                                )
+                            })
+                    }
+                </ul>
+            </div>
+        </main>
     )
 }
 
-export default TodoList
+export default TodoList;
